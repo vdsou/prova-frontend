@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Homepage = () => {
+const Homepage = () => (
   <div>
     <h1>Homepage</h1>
-  </div>;
-};
+  </div>
+);
 export default Homepage;
