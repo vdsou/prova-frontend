@@ -1,8 +1,7 @@
 import React from 'react';
+import Modules from '../../components/Modules';
 
 const Homepage = () => (
-  <div>
-    <h1>Homepage</h1>
-  </div>
+  <Modules />
 );
 export default Homepage;
