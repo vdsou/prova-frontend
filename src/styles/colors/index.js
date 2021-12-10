@@ -1,8 +1,10 @@
 const colors = {
-  PRIMARY: '#3BD42D',
-  SECONDARY: '#F7F7F7',
+  PRIMARY: '#BD93F9',
+  SECONDARY: '#f8f8f2',
   TERTIARY: '#EFEFEF',
-  BACKGROUND: '#1C0C3F',
+  QUATERNARY: '#50fa7b',
+  BACKGROUND: '#282A36',
+  BACKGROUND2: '#44475a',
 };
 
 export default colors;

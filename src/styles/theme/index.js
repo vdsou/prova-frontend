@@ -5,7 +5,9 @@ const theme = {
     primary: colors.PRIMARY,
     secondary: colors.SECONDARY,
     tertiary: colors.TERTIARY,
+    quaternary: colors.QUATERNARY,
     background: colors.BACKGROUND,
+    background2: colors.BACKGROUND2,
   },
 };
 
