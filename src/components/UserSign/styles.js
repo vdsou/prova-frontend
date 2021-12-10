@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
-export const SignContainer = styled.div`
+export const Wrapper = styled.main`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SignContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

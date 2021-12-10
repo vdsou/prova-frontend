@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SignContainer } from './styles';
+import { SignContainer, Wrapper } from './styles';
 
 const UserSign = ({ children }) => (
-  <SignContainer>
-    {children}
-  </SignContainer>
+  <Wrapper>
+    <SignContainer>{children}</SignContainer>
+  </Wrapper>
 );
 
 UserSign.propTypes = {
