@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SignContainer, Wrapper } from './styles';
 
-const UserSign = ({ children }) => (
+const UserSign = ({ children, colorScheme = 'primary' }) => (
   <Wrapper>
-    <SignContainer>{children}</SignContainer>
+    <SignContainer colorScheme={colorScheme}>{children}</SignContainer>
   </Wrapper>
 );
 

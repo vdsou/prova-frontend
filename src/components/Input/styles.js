@@ -6,7 +6,7 @@ export const InputContainer = styled.div`
   justify-content: center;
   input {
     background: none;
-    border: 0.1rem solid ${({ theme }) => theme.colors.primary};
+    border: 0.1rem solid ${({ theme, colorScheme }) => colorScheme && theme.colors[colorScheme]};
     border-radius: 1rem;
     width: 85%;
     margin: 1rem;
@@ -14,7 +14,7 @@ export const InputContainer = styled.div`
     color: ${({ theme }) => theme.colors.secondary};
     outline: none;
 
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
   }

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.main`
-
+const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.secondary};
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 `;
 
-export default Wrapper;
+export default Title;

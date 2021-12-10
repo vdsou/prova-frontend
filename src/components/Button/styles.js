@@ -4,11 +4,12 @@ export const ButtonContainer = styled.button`
   width: 90%;
   margin: 1rem;
   padding: 1rem;
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme, colorScheme }) => colorScheme && theme.colors[colorScheme]};
   border: none;
   border-radius: 1rem;
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: 700;
+  font-size: 1.6rem;
   cursor: pointer;
   &:hover {
     opacity: 0.9;
