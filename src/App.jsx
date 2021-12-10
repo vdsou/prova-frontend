@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import Header from './components/Header';
 
 import Router from './router';
 import GlobalStyles from './styles/globalStyles';
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <GlobalStyles />
+        <Header />
         <Router />
       </ThemeProvider>
     </div>

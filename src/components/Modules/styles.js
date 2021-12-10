@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+`;
+export const Cards = styled.div`
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2.4rem;
 `;
 
@@ -25,7 +32,7 @@ export const Card = styled.button`
   align-items: start;
   justify-content: space-between;
   height: 10rem;
-  width: clamp(50%, 80%, 30em);
+  width: clamp(90%, 20vw, 30rem);
   padding: 2rem;
   background: none;
   border: 0.1rem solid ${({ theme }) => theme.colors.primary};

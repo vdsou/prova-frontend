@@ -5,9 +5,10 @@ const GlobalStyles = createGlobalStyle`
   font-size: 62.5%;
 }
 * {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box; */
+  transition: all linear 0.2s;
 }
 body {
   background: ${({ theme }) => theme.colors.background};
@@ -16,6 +17,7 @@ body {
 a{
   text-decoration: none;
   color: ${({ theme }) => theme.colors.tertiary}
+  overflow: hidden;
 }
 `;
 

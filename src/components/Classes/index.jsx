@@ -2,12 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import {
-  Title, Wrapper, Cards, Card,
+  Wrapper, Cards, Card,
 } from './styles';
+import SectionTitle from '../SectionTitle';
 
 const Classes = () => (
   <Wrapper>
-    <Title>Classes</Title>
+    <SectionTitle>Aulas</SectionTitle>
     <Cards>
       <Card>
         <h2>Módulo Selecionado1</h2>

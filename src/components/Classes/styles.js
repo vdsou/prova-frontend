@@ -5,15 +5,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const Title = styled.h3`
-  font-size: 2.4rem;
-  color: ${({ theme }) => theme.colors.tertiary};
-`;
-
 export const Cards = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2.4rem;
   margin: 2.4rem 0;
   width: 100%;

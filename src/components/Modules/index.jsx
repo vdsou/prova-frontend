@@ -1,34 +1,58 @@
 import React from 'react';
 import {
-  Wrapper, CardTitle, Card, ClassesQuantity,
+  Wrapper, CardTitle, Card, Cards, ClassesQuantity,
 } from './styles';
+import SectionTitle from '../SectionTitle';
 
 const Modules = () => (
   <Wrapper>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
-    <Card>
-      <CardTitle>Homepage</CardTitle>
-      <ClassesQuantity>05 aulas</ClassesQuantity>
-    </Card>
+    <SectionTitle>Módulos</SectionTitle>
+    <Cards>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+      <Card>
+        <CardTitle>Módulo</CardTitle>
+        <ClassesQuantity>05 aulas</ClassesQuantity>
+      </Card>
+    </Cards>
   </Wrapper>
 );
 
