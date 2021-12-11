@@ -4,12 +4,14 @@ export const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.background2};
   height: 8rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.6rem;
   p,
   a {
     color: ${({ theme }) => theme.colors.secondary};
+    margin-bottom: 2.5rem;
   }
   a {
     text-decoration: underline;
