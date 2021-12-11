@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import {
   Wrapper, CardTitle, Card, Cards, ClassesQuantity,
 } from './styles';
@@ -9,48 +11,53 @@ const Modules = () => (
     <SectionTitle>Módulos</SectionTitle>
     <Cards>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
       <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
-      </Card>
-      <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
-      </Card>
-      <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
-      </Card>
-      <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
-      </Card>
-      <Card>
-        <CardTitle>Módulo</CardTitle>
-        <ClassesQuantity>05 aulas</ClassesQuantity>
+        <div>
+          <CardTitle>Módulo</CardTitle>
+          <ClassesQuantity>05 aulas</ClassesQuantity>
+        </div>
+        <i><FontAwesomeIcon icon={faGraduationCap} /></i>
       </Card>
     </Cards>
   </Wrapper>

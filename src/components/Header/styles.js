@@ -1,23 +1,32 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-  height: 5rem;
-  width: clamp(40rem, 100vw, 50rem);
+  height: auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem auto;
+  nav {
+    margin: 0 auto;
+  }
   ul {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
+
+    @media (max-width: 800px) {
+      width: 80%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: start;
+    }
   }
   li {
     border: 0.1rem solid ${({ theme }) => theme.colors.primary};
     overflow: hidden;
     border-radius: 1rem;
+    margin: 2rem;
   }
   a {
     display: block;
@@ -25,11 +34,11 @@ export const Wrapper = styled.header`
     font-size: clamp(1.3rem, 2vw, 1.6rem);
     font-weight: bold;
     line-height: 1.5;
-    color: #ea6ca6;
+    color: ${({ theme }) => theme.colors.secondary};
     opacity: 1;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.tertiary};
+      color: #ea6ca6;
       opacity: 0.8;
     }
   }

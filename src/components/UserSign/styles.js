@@ -17,8 +17,13 @@ export const SignContainer = styled.form`
   width: 30%;
   height: auto;
   padding: 2rem;
-  border: 0.1rem solid ${({ theme, colorScheme }) => (colorScheme && theme.colors[colorScheme])};
+  border: 0.1rem solid
+    ${({ theme, colorScheme }) => colorScheme && theme.colors[colorScheme]};
   border-radius: 2rem;
+
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 `;
 export const Test = styled.div`
   color: white;

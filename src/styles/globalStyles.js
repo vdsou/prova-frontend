@@ -4,6 +4,12 @@ const GlobalStyles = createGlobalStyle`
 :root{
   font-size: 62.5%;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;

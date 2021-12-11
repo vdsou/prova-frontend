@@ -26,10 +26,6 @@ export const ClassesQuantity = styled.span`
 
 export const Card = styled.button`
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: start;
   justify-content: space-between;
   height: 10rem;
   width: clamp(90%, 20vw, 30rem);
@@ -37,6 +33,26 @@ export const Card = styled.button`
   background: none;
   border: 0.1rem solid ${({ theme }) => theme.colors.primary};
   border-radius: 2rem;
+  display: flex;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  i {
+    background: ${({ theme }) => theme.colors.primary};
+    height: 90%;
+    width: 20%;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 1rem; */
+    border-radius: 1rem;
+    color: ${({ theme }) => theme.colors.secondary};
+  }
 
   cursor: pointer;
 
