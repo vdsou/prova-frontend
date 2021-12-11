@@ -34,6 +34,12 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">
+                click here
+              </a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -54,6 +60,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -74,6 +84,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -94,6 +108,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -114,6 +132,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -134,6 +156,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -154,6 +180,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -174,6 +204,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">
@@ -194,6 +228,10 @@ const ManageClasses = () => (
             <p>id: 123456</p>
             <p>Módulo: módulo 1</p>
             <p>Data da aula: 12/04/2021</p>
+            <p>
+              Video:
+              <a href="https://www.youtube.com/watch?v=K4TOrB7at0Y">click here</a>
+            </p>
           </div>
           <div className="buttons">
             <button type="button">

@@ -53,6 +53,10 @@ export const List = styled.div`
       margin-top: 0.8rem;
     }
   }
+  a{
+    color: ${({ theme }) => theme.colors.secondary};
+    margin-left: 1rem;
+  }
 `;
 
 export const ClassesList = styled.div``;
