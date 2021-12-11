@@ -27,10 +27,13 @@ export const Wrapper = styled.header`
     overflow: hidden;
     border-radius: 1rem;
     margin: 2rem;
+    &:hover {
+      border: 0.1rem solid ${({ theme }) => theme.colors.secondary};
+    }
   }
   a {
     display: block;
-    padding: 1rem 2rem;
+    padding: .9rem 2.3rem;
     font-size: clamp(1.3rem, 2vw, 1.6rem);
     font-weight: bold;
     line-height: 1.5;

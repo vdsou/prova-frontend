@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 import Router from './router';
@@ -13,6 +14,7 @@ function App() {
         <GlobalStyles />
         <Header />
         <Router />
+        <Footer />
       </ThemeProvider>
     </div>
   );

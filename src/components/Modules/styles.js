@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 export const Cards = styled.div`
-  margin-top: 2rem;
+  margin: 2rem 0.2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2.4rem;
@@ -34,13 +34,16 @@ export const Card = styled.button`
   border: 0.1rem solid ${({ theme }) => theme.colors.primary};
   border-radius: 2rem;
   display: flex;
+  &:hover {
+    transform: scale(1.01, 1.01);
+    background: #282A36;
+  }
   div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: start;
   }
-
   i {
     background: ${({ theme }) => theme.colors.primary};
     height: 90%;
@@ -49,14 +52,9 @@ export const Card = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 1rem; */
     border-radius: 1rem;
     color: ${({ theme }) => theme.colors.secondary};
   }
 
   cursor: pointer;
-
-  &:hover {
-    opacity: 0.9;
-  }
 `;

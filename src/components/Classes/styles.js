@@ -23,7 +23,9 @@ export const Card = styled.div`
   min-height: 20rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.quaternary};
   border-radius: 2rem;
-  /* background: #2d2d31; */
+  &:hover {
+    background: #2d2d31;
+  }
 
   h2 {
     margin: 1.5rem 0;
@@ -33,7 +35,7 @@ export const Card = styled.div`
   div {
     position: relative;
     display: inline-flex;
-    opacity: 0.9;
+    opacity: 0.8;
     border: 0.1rem solid ${({ theme }) => theme.colors.quaternary};
     border-radius: 1rem;
     overflow: hidden;
