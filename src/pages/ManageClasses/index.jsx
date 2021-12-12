@@ -12,7 +12,7 @@ const ManageClasses = () => (
     <SectionTitle>Painel de Aulas</SectionTitle>
     <Search>
       <Input
-        placeholder="Search"
+        placeholder="Pesquisar aulas"
         type="search"
         colorScheme="secondary"
         style={{
