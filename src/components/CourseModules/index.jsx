@@ -3,12 +3,12 @@ import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import {
-  Wrapper, CardTitle, Card, Cards, ClassesQuantity,
+  Wrapper, CardTitle, Card, Cards, LecturesQuantity,
 } from './styles';
 import SectionTitle from '../SectionTitle';
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 
-const Modules = () => {
+const CourseModules = () => {
   const { courseModulesList, setSelectedCourseModule } = useContext(CourseModulesContext);
   return (
     <Wrapper>
@@ -19,7 +19,7 @@ const Modules = () => {
           <Card key={item._id} onClick={() => setSelectedCourseModule(item._id)}>
             <div>
               <CardTitle>{item.name}</CardTitle>
-              <ClassesQuantity>05 aulas</ClassesQuantity>
+              <LecturesQuantity>05 aulas</LecturesQuantity>
             </div>
             <i>
               <FontAwesomeIcon icon={faGraduationCap} />
@@ -31,4 +31,4 @@ const Modules = () => {
   );
 };
 
-export default Modules;
+export default CourseModules;

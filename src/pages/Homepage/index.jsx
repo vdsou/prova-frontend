@@ -1,14 +1,14 @@
 import React from 'react';
 import Wrapper from './styles';
-import Modules from '../../components/Modules';
-import Classes from '../../components/Classes';
+import CourseModules from '../../components/CourseModules';
+import Lectures from '../../components/Lectures';
 import { CourseModulesProvider } from '../../context/CourseModulesContext';
 
 const Homepage = () => (
   <Wrapper>
     <CourseModulesProvider>
-      <Modules />
-      <Classes />
+      <CourseModules />
+      <Lectures />
     </CourseModulesProvider>
   </Wrapper>
 );

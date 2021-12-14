@@ -59,4 +59,4 @@ export const List = styled.div`
   }
 `;
 
-export const ClassesList = styled.div``;
+export const LecturesList = styled.div``;

@@ -21,7 +21,7 @@ export const CardTitle = styled.h4`
   margin-bottom: 1rem;
 `;
 
-export const ClassesQuantity = styled.span`
+export const LecturesQuantity = styled.span`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 

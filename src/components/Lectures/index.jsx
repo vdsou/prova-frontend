@@ -8,7 +8,7 @@ import { Wrapper, Cards, Card } from './styles';
 import SectionTitle from '../SectionTitle';
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 
-const Classes = () => {
+const Lectures = () => {
   const [filteredLectures, setFiltedLectures] = useState([]);
   const { lectureList, selectedCourseModule } = useContext(CourseModulesContext);
   useEffect(() => {
@@ -54,4 +54,4 @@ const Classes = () => {
   );
 };
 
-export default Classes;
+export default Lectures;
