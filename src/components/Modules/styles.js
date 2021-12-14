@@ -15,7 +15,8 @@ export const Cards = styled.div`
 
 export const CardTitle = styled.h4`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: clamp(2rem, 2vw, 2.4rem);
+  font-size: clamp(2rem, 1vw, 2.4rem);
+  text-align: left;
   overflow-wrap: break-word;
   margin-bottom: 1rem;
 `;
@@ -27,8 +28,8 @@ export const ClassesQuantity = styled.span`
 export const Card = styled.button`
   overflow: hidden;
   justify-content: space-between;
-  height: 10rem;
-  width: clamp(90%, 20vw, 30rem);
+  min-height: 10rem;
+  min-width: clamp(80%, 20vw, 30rem);
   padding: 2rem;
   background: none;
   border: 0.1rem solid ${({ theme }) => theme.colors.primary};
@@ -36,7 +37,13 @@ export const Card = styled.button`
   display: flex;
   &:hover {
     transform: scale(1.01, 1.01);
-    background: #282A36;
+    background: #282a36;
+  }
+  @media (max-width: 800px) {
+    flex-direction: column;
+    width: 93%;
+    height: 13.5rem;
+    align-items: center;
   }
   div {
     display: flex;
