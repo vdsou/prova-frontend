@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import api from '../services/api';
 
 const CourseModulesContext = createContext();
+
 const CourseModulesProvider = ({ children }) => {
   const [courseModulesList, setCourseModulesList] = useState([]);
   const [lectureList, setLectureList] = useState([]);

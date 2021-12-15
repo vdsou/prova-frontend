@@ -5,6 +5,7 @@ import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
 import ManageLectures from '../pages/ManageLectures';
 import ManageModules from '../pages/ManageModules';
+import Welcome from '../pages/Welcome';
 
 const Router = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const Router = () => (
       <Route path="/signin" element={<SignIn />} />
       <Route path="/painel-aulas" element={<ManageLectures />} />
       <Route path="/painel-modulos" element={<ManageModules />} />
+      <Route path="/welcome" element={<Welcome />} />
     </Routes>
   </BrowserRouter>
 );

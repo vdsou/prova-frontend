@@ -1,6 +1,7 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const Wrapper = styled.main`
+export const FormWrapper = styled.form`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,7 +10,7 @@ export const Wrapper = styled.main`
   align-items: center;
 `;
 
-export const SignContainer = styled.form`
+export const SignContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,7 +25,4 @@ export const SignContainer = styled.form`
   @media (max-width: 800px) {
     width: 80%;
   }
-`;
-export const Test = styled.div`
-  color: white;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button.attrs({ type: 'submit' })`
   width: 90%;
   margin: 1rem;
   padding: 1rem;

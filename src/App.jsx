@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { UserAuthProvider } from './context/UserAuthContext';
 
 import Router from './router';
 import GlobalStyles from './styles/globalStyles';
@@ -12,9 +13,11 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Header />
-        <Router />
-        <Footer />
+        <UserAuthProvider>
+          <Header />
+          <Router />
+          <Footer />
+        </UserAuthProvider>
       </ThemeProvider>
     </div>
   );
