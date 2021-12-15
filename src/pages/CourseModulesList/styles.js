@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ManageModules = styled.section`
+export const CourseModulesList = styled.section`
   background: tomato;
 `;
 

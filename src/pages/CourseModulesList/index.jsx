@@ -7,7 +7,7 @@ import PageWrapper from '../../components/PageWrapper';
 import SectionTitle from '../../components/SectionTitle';
 import { Search, List } from './styles';
 
-const ManageModules = () => (
+const CourseModulesList = () => (
   <PageWrapper>
     <SectionTitle>Painel de Módulos</SectionTitle>
     <Search>
@@ -112,4 +112,4 @@ const ManageModules = () => (
   </PageWrapper>
 );
 
-export default ManageModules;
+export default CourseModulesList;
