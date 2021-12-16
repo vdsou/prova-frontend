@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 
-export const CourseModulesList = styled.section`
-  background: tomato;
-`;
-
 export const Search = styled.div`
   margin-top: 2rem;
 `;
-
 export const List = styled.div`
   width: 100%;
+  margin-bottom: 2rem;
   button {
     background: ${({ theme }) => theme.colors.primary};
     border: 0;
@@ -22,6 +18,7 @@ export const List = styled.div`
     font-size: 1.8rem;
     color: ${({ theme }) => theme.colors.background};
     margin: 1rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     &:hover {
       opacity: 0.8;

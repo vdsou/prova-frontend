@@ -9,6 +9,9 @@ const CourseModulesProvider = ({ children }) => {
   const [courseModulesList, setCourseModulesList] = useState([]);
   const [lectureList, setLectureList] = useState([]);
   const [selectedCourseModule, setSelectedCourseModule] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState([]);
+
   useEffect(() => {
     api.get('/course-modules/get').then(({ data }) => {
       const { courseModules } = data;
@@ -21,12 +24,33 @@ const CourseModulesProvider = ({ children }) => {
       setLectureList(lecture);
     });
   }, []);
+
+  const editCourseModule = (id) => {
+    api.patch(`/course-modules/delete/${id}`, {}).then().catch();
+  };
+
+  const deleteCourseModule = (id) => {
+    api
+      .delete(`/course-modules/delete/${id}`)
+      .then(({ data }) => {
+        setMessage(data.message);
+      })
+      .catch((err) => {
+        if (err.response) {
+          setError(err.response.message);
+        }
+      });
+  };
   return (
     <CourseModulesContext.Provider
       value={{
         courseModulesList,
         lectureList,
         selectedCourseModule,
+        message,
+        error,
+        editCourseModule,
+        deleteCourseModule,
         setCourseModulesList,
         setLectureList,
         setSelectedCourseModule,

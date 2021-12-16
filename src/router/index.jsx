@@ -12,8 +12,8 @@ import {
 import Homepage from '../pages/Homepage';
 import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
-import LecturesList from '../pages/LecturesList';
-import CourseModulesList from '../pages/CourseModulesList';
+import LecturesPage from '../pages/LecturesPage';
+import CourseModulesPage from '../pages/CourseModulesPage';
 import Welcome from '../pages/Welcome';
 import Panel from '../pages/Panel';
 
@@ -29,8 +29,8 @@ const Router = () => (
       <Route path="/signup" exact element={<SignUp />} />
       <Route path="/signin" exact element={<SignIn />} />
       <Route exact element={<PrivateRoutes />}>
-        <Route path="/painel-aulas" exact element={<LecturesList />} />
-        <Route path="/painel-modulos" exact element={<CourseModulesList />} />
+        <Route path="/painel-aulas" exact element={<LecturesPage />} />
+        <Route path="/painel-modulos" exact element={<CourseModulesPage />} />
         <Route path="/painel" exact element={<Panel />} />
       </Route>
       <Route path="/welcome" exact element={<Welcome />} />

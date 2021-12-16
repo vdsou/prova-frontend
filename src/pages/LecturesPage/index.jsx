@@ -7,7 +7,7 @@ import PageWrapper from '../../components/PageWrapper';
 import SectionTitle from '../../components/SectionTitle';
 import { List, Search } from './styles';
 
-const LecturesList = () => (
+const LecturesPage = () => (
   <PageWrapper>
     <SectionTitle>Painel de Aulas</SectionTitle>
     <Search>
@@ -251,4 +251,4 @@ const LecturesList = () => (
   </PageWrapper>
 );
 
-export default LecturesList;
+export default LecturesPage;

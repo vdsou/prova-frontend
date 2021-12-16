@@ -19,7 +19,7 @@ const CourseModules = () => {
           <Card key={item._id} onClick={() => setSelectedCourseModule(item._id)}>
             <div>
               <CardTitle>{item.name}</CardTitle>
-              <LecturesQuantity>05 aulas</LecturesQuantity>
+              <LecturesQuantity>{`${item.lecturesQuantity} aulas`}</LecturesQuantity>
             </div>
             <i>
               <FontAwesomeIcon icon={faGraduationCap} />
