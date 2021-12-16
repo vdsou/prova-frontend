@@ -13,20 +13,22 @@ import SuccessMessage from '../SuccessMessage';
 
 const ManageCourseModules = () => {
   const {
-    courseModulesList, deleteCourseModule, error, message,
+    courseModulesList, setEditUpdate, deleteCourseModule, error, message,
   } = useContext(CourseModulesContext);
   const [list, setList] = useState([]);
   const [renderEdit, setRenderEdit] = useState(false);
+  const [renderList, setRenderList] = useState(true);
+
   console.log(courseModulesList);
 
   useEffect(() => {
     setList(courseModulesList);
   }, [courseModulesList]);
 
-  const hadleEdit = (id) => {
+  const hadleEdit = (id, value) => {
     setRenderEdit(!renderEdit);
-    // editCourseModule(id);
-    console.log(id);
+    setRenderList(!renderList);
+    setEditUpdate({ id, value });
   };
 
   const handleDelete = (id) => {
@@ -55,31 +57,37 @@ const ManageCourseModules = () => {
           inserir
         </button>
         {renderEdit && <EditCourseModule />}
-        <ul>
-          {list && list.map((item) => (
-            <li key={item._id}>
-              <div className="item">
-                <strong>{item.name}</strong>
-                <p>{`id: ${item._id}`}</p>
-                <p>{`Módulo: ${item.name}`}</p>
-                <p>{`Quantidade de aulas: ${item.lecturesQuantity}`}</p>
-                <p>{`Data de Criação: ${item.createdAt}`}</p>
-              </div>
-              <div className="buttons">
-                <button onClick={() => hadleEdit(item._id)} type="button">
-                  <i>
-                    <FontAwesomeIcon icon={faEdit} />
-                  </i>
-                </button>
-                <button onClick={() => handleDelete(item._id)} type="button">
-                  <i>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </i>
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {renderList && (
+          <ul>
+            {list
+            && list.map((item) => (
+              <li key={item._id}>
+                <div className="item">
+                  <strong>{item.name}</strong>
+                  <p>{`id: ${item._id}`}</p>
+                  <p>{`Módulo: ${item.name}`}</p>
+                  <p>{`Quantidade de aulas: ${item.lecturesQuantity}`}</p>
+                  <p>{`Data de Criação: ${item.createdAt}`}</p>
+                </div>
+                <div className="buttons">
+                  <button onClick={() => hadleEdit(item._id, item.name)} type="button">
+                    <i>
+                      <FontAwesomeIcon icon={faEdit} />
+                    </i>
+                  </button>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    type="button"
+                  >
+                    <i>
+                      <FontAwesomeIcon icon={faTrash} />
+                    </i>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </List>
       {message && <SuccessMessage>{message}</SuccessMessage>}
       {error && <ErrorMessage>{error}</ErrorMessage>}

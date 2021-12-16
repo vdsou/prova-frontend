@@ -13,6 +13,7 @@ export const List = styled.div`
     text-align: center;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.8rem;
@@ -22,6 +23,11 @@ export const List = styled.div`
     padding: 1rem;
     &:hover {
       opacity: 0.8;
+    }
+  }
+  .buttons {
+    @media (max-width: 800px) {
+      display: flex;
     }
   }
   .newClass {
@@ -52,6 +58,9 @@ export const List = styled.div`
     }
     p {
       margin-top: 0.8rem;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
     }
   }
   a {
