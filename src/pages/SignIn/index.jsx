@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import Title from './styles';
 import UserSign from '../../components/UserSign';
 import Input from '../../components/Input';
@@ -8,7 +7,6 @@ import { UserAuthContext } from '../../context/UserAuthContext';
 import ErrorMessage from '../../components/ErrorMessage';
 
 const SignIn = () => {
-  // const navigate = useNavigate();
   const { error, handleUserSignIn } = useContext(UserAuthContext);
   const [userData, setUserData] = useState([]);
   const handleInputs = (event) => {
@@ -21,7 +19,6 @@ const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUserSignIn(userData);
-    // navigate('/');
   };
   return (
     <UserSign colorScheme="quaternary" onSubmit={handleSubmit}>

@@ -33,7 +33,6 @@ const SignUp = () => {
     event.preventDefault();
     if (userData.password === userData.passwordConfirm) {
       handleUserSignUp(userData);
-      navigate('/welcome');
     }
   };
   return (

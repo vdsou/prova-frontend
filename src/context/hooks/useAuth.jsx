@@ -49,6 +49,7 @@ const useAuth = () => {
       })
       .then(({ data }) => {
         setSignUpSuccess(data.success);
+        window.location.href = '/welcome';
       })
       .catch((err) => {
         if (err.response) {
@@ -71,6 +72,9 @@ const useAuth = () => {
           ...userInfo,
           token: userToken,
         });
+        setIsUserAuthorized(true);
+        // navigate('/painel');
+        window.location.href = '/painel';
       })
       .catch((err) => {
         if (err.response) {
@@ -86,6 +90,7 @@ const useAuth = () => {
   return {
     handleUserSignUp,
     handleUserSignIn,
+    handleUserLogout,
     userInfo,
     isUserAuthorized,
     error,

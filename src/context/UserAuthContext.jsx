@@ -7,12 +7,22 @@ const UserAuthContext = createContext();
 
 const UserAuthProvider = ({ children }) => {
   const {
-    handleUserSignUp, error, signUpSuccess, handleUserSignIn,
+    handleUserSignUp,
+    handleUserSignIn,
+    handleUserLogout,
+    error,
+    signUpSuccess,
+    isUserAuthorized,
   } = useAuth();
   return (
     <UserAuthContext.Provider
       value={{
-        handleUserSignUp, error, signUpSuccess, handleUserSignIn,
+        handleUserSignUp,
+        handleUserSignIn,
+        handleUserLogout,
+        error,
+        signUpSuccess,
+        isUserAuthorized,
       }}
     >
       {children}
