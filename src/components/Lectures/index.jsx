@@ -19,6 +19,7 @@ const Lectures = () => {
         setFiltedLectures(filter);
       }
     }, [selectedCourseModule]);
+    console.log(filteredLectures);
   return (
     <Wrapper>
       <SectionTitle>Aulas</SectionTitle>
@@ -49,6 +50,7 @@ const Lectures = () => {
             </p>
           </Card>
         ))}
+        {(filteredLectures && filteredLectures.length === 0) && <h2 className="no-lecture">Não há aulas</h2>}
       </Cards>
     </Wrapper>
   );

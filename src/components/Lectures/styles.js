@@ -11,6 +11,10 @@ export const Cards = styled.div`
   gap: 2.4rem;
   margin: 2.4rem 0;
   width: 100%;
+  .no-lecture{
+    font-size: 1.8rem;
+    color: ${({ theme }) => theme.colors.primary}
+  }
 `;
 
 export const Card = styled.div`

@@ -11,9 +11,9 @@ import FormWrapper from './styles';
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 
 export default function EditLecture() {
-  const { editLectureUpdate, lectureList, editLecture } = useContext(CourseModulesContext);
+  const { editLectureUpdateId, lectureList, editLecture } = useContext(CourseModulesContext);
   const [lectureToUpdate, setLectureToUpdate] = useState({});
-  const [selectedLecture] = lectureList.filter((item) => item._id === editLectureUpdate);
+  const [selectedLecture] = lectureList.filter((item) => item._id === editLectureUpdateId);
 
   const lectureSpread = {
     name: '',

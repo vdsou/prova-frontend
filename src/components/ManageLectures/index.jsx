@@ -21,14 +21,12 @@ export default function ManageLectures() {
   const [renderList, setRenderList] = useState(true);
   const {
     lectureList,
-    setEditLectureUpdate,
-    editLectureUpdate,
+    setEditLectureUpdateId,
+    editLectureUpdateId,
     deleteLecture,
     success,
     setSuccess,
     setError,
-    sapo,
-    setSapo,
     error,
   } = useContext(CourseModulesContext);
 
@@ -44,7 +42,7 @@ export default function ManageLectures() {
     setError('');
   };
   const handleLectureEdit = (id) => {
-    setEditLectureUpdate(id);
+    setEditLectureUpdateId(id);
     setRenderEdit(true);
     setRenderList(false);
     setSuccess('');

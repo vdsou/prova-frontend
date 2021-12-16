@@ -49,7 +49,7 @@ export const Card = styled.button`
   }
   i {
     background: ${({ theme }) => theme.colors.primary};
-    height: 6rem;
+    height: 5rem;
     width: 6rem;
     font-size: 2.4rem;
     display: flex;
