@@ -1,49 +1,41 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React, { useContext, useEffect, useState } from 'react';
-import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import { CourseModulesContext } from '../../context/CourseModulesContext';
 import Input from '../Input';
 import PageWrapper from '../PageWrapper';
 import SectionTitle from '../SectionTitle';
-import { Search, List } from './styles';
-import { CourseModulesContext } from '../../context/CourseModulesContext';
-import EditCourseModule from '../EditCourseModule';
+import { List, Search } from './styles';
 import InsertCourseModule from '../InsertCourseModule';
-import ErrorMessage from '../ErrorMessage';
+import EditLecture from '../EditLecture';
 import SuccessMessage from '../SuccessMessage';
+import ErrorMessage from '../ErrorMessage';
 
-const ManageCourseModules = () => {
-  const {
-    courseModulesList,
-    setEditCourseModuleUpdate,
-    deleteCourseModule,
-    setError,
-    error,
-    setSuccess,
-    success,
-  } = useContext(CourseModulesContext);
+export default function ManageLectures() {
   const [list, setList] = useState([]);
   const [renderEdit, setRenderEdit] = useState(false);
   const [renderInsert, setRenderInsert] = useState(false);
   const [renderList, setRenderList] = useState(true);
+  const {
+    lectureList,
+    setEditLectureUpdate,
+    editLectureUpdate,
+    deleteLecture,
+    success,
+    setSuccess,
+    setError,
+    sapo,
+    setSapo,
+    error,
+  } = useContext(CourseModulesContext);
 
   useEffect(() => {
-    setList(courseModulesList);
-  }, [courseModulesList]);
+    setList(lectureList);
+  }, [lectureList, list]);
 
-  const handleEdit = (id, value) => {
-    setRenderEdit(true);
-    setRenderList(false);
-    setEditCourseModuleUpdate({ id, value });
-    setSuccess('');
-    setError('');
-  };
-  const handleDelete = (id) => {
-    const newList = list.filter((item) => item._id !== id);
-    setList(newList);
-
-    deleteCourseModule(id);
-  };
   const handleInsert = () => {
     setRenderInsert(true);
     setRenderList(false);
@@ -51,6 +43,14 @@ const ManageCourseModules = () => {
     setSuccess('');
     setError('');
   };
+  const handleLectureEdit = (id) => {
+    setEditLectureUpdate(id);
+    setRenderEdit(true);
+    setRenderList(false);
+    setSuccess('');
+    setError('');
+  };
+
   const handleBack = () => {
     if (renderInsert || renderEdit) {
       setRenderInsert(false);
@@ -60,12 +60,20 @@ const ManageCourseModules = () => {
       setError('');
     }
   };
+
+  const handleDelete = (id) => {
+    const newList = list.filter((item) => item._id !== id);
+    deleteLecture(id);
+    setList(newList);
+  };
+
   return (
     <PageWrapper>
-      <SectionTitle>Painel de Módulos</SectionTitle>
+      <SectionTitle>Painel de Aulas</SectionTitle>
       <Search>
         <Input
-          placeholder="Pesquisar módulos"
+          placeholder="Pesquisar aulas"
+          type="search"
           colorScheme="secondary"
           style={{
             fontSize: '1.8rem',
@@ -85,7 +93,7 @@ const ManageCourseModules = () => {
         {success && <SuccessMessage>{success}</SuccessMessage>}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         {renderInsert && <InsertCourseModule />}
-        {renderEdit && <EditCourseModule />}
+        {renderEdit && <EditLecture />}
         {renderList && (
           <ul>
             {list && list.map((item) => (
@@ -93,13 +101,18 @@ const ManageCourseModules = () => {
                 <div className="item">
                   <strong>{item.name}</strong>
                   <p>{`id: ${item._id}`}</p>
-                  <p>{`Módulo: ${item.name}`}</p>
-                  <p>{`Quantidade de aulas: ${item.lecturesQuantity}`}</p>
-                  <p>{`Data de Criação: ${item.createdAt}`}</p>
+                  <p>{`Módulo: ${item.courseModule.name}`}</p>
+                  <p>{`Data da aula: ${item.date}`}</p>
+                  <p>
+                    Video:
+                    <a href={item.url}>
+                      <strong> acessar o vídeo</strong>
+                    </a>
+                  </p>
                 </div>
                 <div className="buttons">
                   <button
-                    onClick={() => handleEdit(item._id, item.name)}
+                    onClick={() => handleLectureEdit(item._id)}
                     type="button"
                   >
                     <i>
@@ -122,6 +135,4 @@ const ManageCourseModules = () => {
       </List>
     </PageWrapper>
   );
-};
-
-export default ManageCourseModules;
+}

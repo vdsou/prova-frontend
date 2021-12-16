@@ -5,9 +5,8 @@ import FormWrapper from './styles';
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 
 export default function EditCourseModule() {
-  const { editUpdate, editCourseModule } = useContext(CourseModulesContext);
+  const { setEditCourseModuleUpdate, editCourseModule } = useContext(CourseModulesContext);
   const [input, setInput] = useState('');
-
   const handleChange = (event) => {
     const { value } = event.target;
     setInput(value);
@@ -19,7 +18,7 @@ export default function EditCourseModule() {
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <h1>Alterar nome do módulo</h1>
-      <h2>{editUpdate.value}</h2>
+      <h2>{setEditCourseModuleUpdate.value}</h2>
       <Input onChange={handleChange} />
       <Button>Salvar</Button>
     </FormWrapper>

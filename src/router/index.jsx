@@ -15,7 +15,7 @@ import SignIn from '../pages/SignIn';
 import LecturesPage from '../pages/LecturesPage';
 import CourseModulesPage from '../pages/CourseModulesPage';
 import Welcome from '../pages/Welcome';
-import Panel from '../pages/Panel';
+import ErrorMessage from '../components/ErrorMessage';
 
 const PrivateRoutes = ({ children, redirect }) => {
   const storedToken = localStorage.getItem('token');
@@ -31,10 +31,9 @@ const Router = () => (
       <Route exact element={<PrivateRoutes />}>
         <Route path="/painel-aulas" exact element={<LecturesPage />} />
         <Route path="/painel-modulos" exact element={<CourseModulesPage />} />
-        <Route path="/painel" exact element={<Panel />} />
       </Route>
       <Route path="/welcome" exact element={<Welcome />} />
-      {/* <Route path="*" exact element={<h1> Página não encontrada 404</h1>} /> */}
+      <Route path="*" exact element={<ErrorMessage> Página não encontrada 404</ErrorMessage>} />
     </Routes>
   </BrowserRouter>
 );

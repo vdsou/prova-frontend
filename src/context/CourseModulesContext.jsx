@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -9,11 +8,12 @@ const CourseModulesContext = createContext();
 const CourseModulesProvider = ({ children }) => {
   const [courseModulesList, setCourseModulesList] = useState([]);
   const [lectureList, setLectureList] = useState([]);
-  const [editUpdate, setEditUpdate] = useState([]);
+  const [editCourseModuleUpdate, setEditCourseModuleUpdate] = useState([]);
+  const [editLectureUpdate, setEditLectureUpdate] = useState('');
+  const [sapo, setSapo] = useState('');
   const [selectedCourseModule, setSelectedCourseModule] = useState('');
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
-
   useEffect(() => {
     api.get('/course-modules/get').then(({ data }) => {
       const { courseModules } = data;
@@ -25,7 +25,7 @@ const CourseModulesProvider = ({ children }) => {
       const { lecture } = data;
       setLectureList(lecture);
     });
-  }, []);
+  }, [success]);
 
   const insertLecture = (newLecture) => {
     api
@@ -58,7 +58,7 @@ const CourseModulesProvider = ({ children }) => {
 
   const editCourseModule = (value) => {
     api
-      .patch(`/course-modules/update/${editUpdate.id}`, { name: value })
+      .patch(`/course-modules/update/${editCourseModuleUpdate.id}`, { name: value })
       .then(({ data }) => setSuccess(data.message))
       .catch((err) => {
         if (err.response) {
@@ -85,6 +85,36 @@ const CourseModulesProvider = ({ children }) => {
         }
       });
   };
+
+  const editLecture = (toUpdate) => {
+    api
+      .patch(`/lectures/update/${editLectureUpdate}`, toUpdate)
+      .then(({ data }) => setSuccess(data.message))
+      .catch((err) => {
+        if (err.response) {
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
+        }
+      });
+  };
+
+  const deleteLecture = (id) => {
+    api
+      .delete(`/lectures/delete/${id}`)
+      .then(({ data }) => {
+        setSuccess(data.message);
+      })
+      .catch((err) => {
+        if (err.response) {
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
+        }
+      });
+  };
   return (
     <CourseModulesContext.Provider
       value={{
@@ -93,15 +123,23 @@ const CourseModulesProvider = ({ children }) => {
         selectedCourseModule,
         success,
         error,
-        editUpdate,
+        editCourseModuleUpdate,
+        editLectureUpdate,
+        sapo,
+        setSapo,
         insertLecture,
+        editLecture,
         insertCourseModule,
-        setEditUpdate,
+        setEditCourseModuleUpdate,
+        setEditLectureUpdate,
         editCourseModule,
         deleteCourseModule,
+        deleteLecture,
         setCourseModulesList,
         setLectureList,
         setSelectedCourseModule,
+        setSuccess,
+        setError,
       }}
     >
       {children}

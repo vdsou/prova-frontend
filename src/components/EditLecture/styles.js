@@ -44,9 +44,6 @@ const FormWrapper = styled.form`
     color: ${({ theme }) => theme.colors.secondary};
     outline: none;
   }
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 
 export default FormWrapper;

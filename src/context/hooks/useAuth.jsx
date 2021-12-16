@@ -73,8 +73,7 @@ const useAuth = () => {
           token: userToken,
         });
         setIsUserAuthorized(true);
-        // navigate('/painel');
-        window.location.href = '/painel';
+        window.location.href = '/';
       })
       .catch((err) => {
         if (err.response) {
