@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useContext, useEffect, useState } from 'react';
-import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Input from '../Input';
 import PageWrapper from '../PageWrapper';
@@ -73,15 +73,14 @@ const ManageCourseModules = () => {
         />
       </Search>
       <List>
-        <button onClick={handleInsert} className="newClass" type="button">
-          <i>
-            <FontAwesomeIcon icon={faPlus} />
-          </i>
-          inserir
-        </button>
-        <button onClick={handleBack} className="newClass" type="button">
-          Voltar
-        </button>
+        <div className="top-buttons">
+          <button onClick={handleInsert} className="new-lecture-button" type="button">
+            inserir
+          </button>
+          <button onClick={handleBack} className="new-lecture-button" type="button">
+            Voltar
+          </button>
+        </div>
         {success && <SuccessMessage>{success}</SuccessMessage>}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         {renderInsert && <InsertCourseModule />}

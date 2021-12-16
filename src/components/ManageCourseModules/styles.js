@@ -30,9 +30,12 @@ export const List = styled.div`
       display: flex;
     }
   }
-  .newClass {
-    margin: 2rem 3rem;
-    padding: 1rem 3rem;
+  .top-buttons{
+    display: flex;
+  }
+  .new-lecture-button {
+    margin: 2rem 2rem;
+    padding: 1rem 2rem;
     background: none;
     border: 0.1rem solid ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};

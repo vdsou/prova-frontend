@@ -23,7 +23,7 @@ export const List = styled.div`
       opacity: 0.8;
     }
   }
-  .newClass {
+  .new-lecture-button {
     margin: 2rem 3rem;
     padding: 1rem 3rem;
     background: none;

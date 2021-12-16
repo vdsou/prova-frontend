@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 import Input from '../Input';
@@ -22,7 +21,6 @@ export default function ManageLectures() {
   const {
     lectureList,
     setEditLectureUpdateId,
-    editLectureUpdateId,
     deleteLecture,
     success,
     setSuccess,
@@ -79,15 +77,14 @@ export default function ManageLectures() {
         />
       </Search>
       <List>
-        <button onClick={handleInsert} className="newClass" type="button">
-          <i>
-            <FontAwesomeIcon icon={faPlus} />
-          </i>
-          inserir
-        </button>
-        <button onClick={handleBack} className="newClass" type="button">
-          Voltar
-        </button>
+        <div className="top-buttons">
+          <button onClick={handleInsert} className="new-lecture-button" type="button">
+            inserir
+          </button>
+          <button onClick={handleBack} className="new-lecture-button" type="button">
+            Voltar
+          </button>
+        </div>
         {success && <SuccessMessage>{success}</SuccessMessage>}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         {renderInsert && <InsertCourseModule />}

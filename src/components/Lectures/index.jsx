@@ -19,7 +19,6 @@ const Lectures = () => {
         setFiltedLectures(filter);
       }
     }, [selectedCourseModule]);
-    console.log(filteredLectures);
   return (
     <Wrapper>
       <SectionTitle>Aulas</SectionTitle>
