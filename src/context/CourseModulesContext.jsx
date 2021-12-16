@@ -11,15 +11,15 @@ const CourseModulesProvider = ({ children }) => {
   const [lectureList, setLectureList] = useState([]);
   const [editUpdate, setEditUpdate] = useState([]);
   const [selectedCourseModule, setSelectedCourseModule] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState([]);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     api.get('/course-modules/get').then(({ data }) => {
       const { courseModules } = data;
       setCourseModulesList(courseModules);
     });
-  }, []);
+  }, [success]);
   useEffect(() => {
     api.get('/lectures/get').then(({ data }) => {
       const { lecture } = data;
@@ -27,13 +27,45 @@ const CourseModulesProvider = ({ children }) => {
     });
   }, []);
 
+  const insertLecture = (newLecture) => {
+    api
+      .post('/lectures/insert', newLecture)
+      .then(({ data }) => {
+        setSuccess(data.message);
+      })
+      .catch((err) => {
+        if (err.response) {
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
+        }
+      });
+  };
+  const insertCourseModule = (value) => {
+    api
+      .post('/course-modules/insert', { name: value })
+      .then(({ data }) => setSuccess(data.message))
+      .catch((err) => {
+        if (err.response) {
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
+        }
+      });
+  };
+
   const editCourseModule = (value) => {
     api
       .patch(`/course-modules/update/${editUpdate.id}`, { name: value })
-      .then(({ data }) => setMessage(data.message))
+      .then(({ data }) => setSuccess(data.message))
       .catch((err) => {
         if (err.response) {
-          setError(err.response.message);
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
         }
       });
   };
@@ -42,11 +74,14 @@ const CourseModulesProvider = ({ children }) => {
     api
       .delete(`/course-modules/delete/${id}`)
       .then(({ data }) => {
-        setMessage(data.message);
+        setSuccess(data.message);
       })
       .catch((err) => {
         if (err.response) {
-          setError(err.response.message);
+          if (err.response) {
+            const { message } = err.response.data;
+            setError(message);
+          }
         }
       });
   };
@@ -56,9 +91,11 @@ const CourseModulesProvider = ({ children }) => {
         courseModulesList,
         lectureList,
         selectedCourseModule,
-        message,
+        success,
         error,
         editUpdate,
+        insertLecture,
+        insertCourseModule,
         setEditUpdate,
         editCourseModule,
         deleteCourseModule,

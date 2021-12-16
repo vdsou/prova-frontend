@@ -8,15 +8,17 @@ import SectionTitle from '../SectionTitle';
 import { Search, List } from './styles';
 import { CourseModulesContext } from '../../context/CourseModulesContext';
 import EditCourseModule from '../EditCourseModule';
+import InsertCourseModule from '../InsertCourseModule';
 import ErrorMessage from '../ErrorMessage';
 import SuccessMessage from '../SuccessMessage';
 
 const ManageCourseModules = () => {
   const {
-    courseModulesList, setEditUpdate, deleteCourseModule, error, message,
+    courseModulesList, setEditUpdate, deleteCourseModule, error, success,
   } = useContext(CourseModulesContext);
   const [list, setList] = useState([]);
   const [renderEdit, setRenderEdit] = useState(false);
+  const [renderInsert, setRenderInsert] = useState(false);
   const [renderList, setRenderList] = useState(true);
 
   console.log(courseModulesList);
@@ -37,6 +39,10 @@ const ManageCourseModules = () => {
 
     deleteCourseModule(id);
   };
+  const handleInsert = () => {
+    setRenderInsert(!renderInsert);
+    setRenderList(!renderList);
+  };
   return (
     <PageWrapper>
       <SectionTitle>Painel de Módulos</SectionTitle>
@@ -50,12 +56,15 @@ const ManageCourseModules = () => {
         />
       </Search>
       <List>
-        <button className="newClass" type="button">
+        <button onClick={handleInsert} className="newClass" type="button">
           <i>
             <FontAwesomeIcon icon={faPlus} />
           </i>
           inserir
         </button>
+        {success && <SuccessMessage>{success}</SuccessMessage>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+        {renderInsert && <InsertCourseModule />}
         {renderEdit && <EditCourseModule />}
         {renderList && (
           <ul>
@@ -89,8 +98,6 @@ const ManageCourseModules = () => {
           </ul>
         )}
       </List>
-      {message && <SuccessMessage>{message}</SuccessMessage>}
-      {error && <ErrorMessage>{error}</ErrorMessage>}
     </PageWrapper>
   );
 };
