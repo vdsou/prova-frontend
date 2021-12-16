@@ -30,7 +30,7 @@ export default function ManageLectures() {
 
   useEffect(() => {
     setList(lectureList);
-  }, [lectureList, list]);
+  }, [lectureList]);
 
   const handleInsert = () => {
     setRenderInsert(true);
@@ -62,7 +62,14 @@ export default function ManageLectures() {
     deleteLecture(id);
     setList(newList);
   };
-
+  const handleSearch = (event) => {
+    const { value } = event.target;
+    const search = lectureList.filter(
+      (item) => item.name.toLowerCase() === value.toLowerCase(),
+    );
+    if (value === '') setList(lectureList);
+    else setList(search);
+  };
   return (
     <PageWrapper>
       <SectionTitle>Painel de Aulas</SectionTitle>
@@ -70,6 +77,7 @@ export default function ManageLectures() {
         <Input
           placeholder="Pesquisar aulas"
           type="search"
+          onChange={handleSearch}
           colorScheme="secondary"
           style={{
             fontSize: '1.8rem',

@@ -60,16 +60,26 @@ const ManageCourseModules = () => {
       setError('');
     }
   };
+  const handleSearch = (event) => {
+    const { value } = event.target;
+    const search = courseModulesList.filter(
+      (item) => item.name.toLowerCase() === value.toLowerCase(),
+    );
+    if (value === '') setList(courseModulesList);
+    else setList(search);
+  };
   return (
     <PageWrapper>
       <SectionTitle>Painel de Módulos</SectionTitle>
       <Search>
         <Input
+          type="search"
           placeholder="Pesquisar módulos"
           colorScheme="secondary"
           style={{
             fontSize: '1.8rem',
           }}
+          onChange={handleSearch}
         />
       </Search>
       <List>
